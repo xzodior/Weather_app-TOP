@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: white;
+}
+
+header {
+    text-align: center;
+    padding: 2em;
+    background-color: red;
+    font-size: 2em;
+}
+
+form {
+    margin: 1em 0;
+    text-align: center;
+}
+
+input {
+    max-width: 400px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.card {
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
