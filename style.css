@@ -5,13 +5,15 @@
 }
 
 html {
-    background-color: white;
+    background-image: url(./Images/background-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
 }
 
 header {
     text-align: center;
     padding: 2em;
-    background-color: red;
     font-size: 2em;
 }
 
@@ -28,19 +30,36 @@ input {
 
 .weather-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2em 0;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2em 5em;
 }
 
 .card {
-    width: 400px;
-    height: 400px;
+    min-width: 500px;
+    min-height: 500px;
     background-color: black;
     color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: flex-start;
+    font-size: 30px;
+}
+
+.weather-details-container {
+    background-color: black;
+    color: white;
+    min-width: 200px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 24px;
+}
+
+.weather-details {
+    display: flex;
+    align-items: center;
 }
