@@ -21,3 +21,14 @@ const getCity = async(city) => {
 
     return data[0];
 }
+
+const getForecast = async(city) => {
+    
+    const base = 'http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/';
+    const query = `329260?apikey=${key}&details=true`;
+
+    const response = await fetch(base + query);
+    const data = await response.json();
+
+    console.log(data[0]);
+}

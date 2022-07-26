@@ -63,3 +63,13 @@ input {
     display: flex;
     align-items: center;
 }
+
+.weather-details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fa-solid{
+    width: 1.5em;
+}

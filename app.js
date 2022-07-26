@@ -40,4 +40,6 @@ form.addEventListener('submit', event => {
     updateCity(input)
         .then(data => updateUI(data))
         .catch(error => console.log(error))
+
+    
 })
