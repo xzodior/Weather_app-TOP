@@ -7,8 +7,12 @@ const updateUI = (data) => {
 
     const cityDets = data.cityDetails;
     const weather = data.weather;
+    const epoch = weather.EpochTime;
+    const date = new Date(0);
+    date.setUTCSeconds(epoch);
 
     card.innerHTML = `
+    <p class="time">${date}</p>
     <h1>${cityDets.EnglishName}</h1>
     <p class="weather-conditions">${weather.WeatherText}</p>
     <div class="weather-info">
@@ -49,7 +53,7 @@ const updateForecastUI = (data) => {
         <i class="fa-solid fa-cloud-showers-heavy fa-2x"></i>
         <div class="weather-details-info">
             <div class="weather-details-label">Chance of Rain</div>
-            <div class="weather-details-data" id="rain">${forecastDetails.RainProbability / 10}%</div>
+            <div class="weather-details-data" id="rain">${forecastDetails.RainProbability / 100}%</div>
         </div>
     </div>`
 }
