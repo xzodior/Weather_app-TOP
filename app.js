@@ -8,11 +8,10 @@ const updateUI = (data) => {
     const cityDets = data.cityDetails;
     const weather = data.weather;
     const epoch = weather.EpochTime;
-    const date = new Date(0);
-    date.setUTCSeconds(epoch);
+    const date = new Date();
 
     card.innerHTML = `
-    <p class="time">${date}</p>
+    <p class="time">${date.toLocaleString()}</p>
     <h1>${cityDets.EnglishName}</h1>
     <p class="weather-conditions">${weather.WeatherText}</p>
     <div class="weather-info">
