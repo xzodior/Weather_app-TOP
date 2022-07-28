@@ -32,3 +32,14 @@ const getForecast = async(id) => {
 
     return data[0];
 }
+
+const getDailyForecast = async(id) => {
+
+    const base = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/';
+    const query = `${id}?apikey=${key}&details=true&metric=true`
+
+    const response = await fetch(base + query);
+    const data = await response.json();
+
+    return data;
+}

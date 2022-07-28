@@ -94,5 +94,9 @@ form.addEventListener('submit', event => {
     updateForecast(input)
         .then(data => updateForecastUI(data))
         .catch(error => console.log(error))
+
+    updateDailyForecast(input)
+        .then(data => updateDailyForecastUI(data))
+        .catch(error => console.log(error))
     
 })
