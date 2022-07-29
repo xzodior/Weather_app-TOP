@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 const container = document.querySelector('.weather-container');
 const card = document.querySelector('.card');
 const weatherDetails = document.querySelector('.weather-details-container');
+const icon = document.querySelector('.weather-info-icon img');
 
 const updateUI = (data) => {
 
@@ -9,6 +10,8 @@ const updateUI = (data) => {
     const weather = data.weather;
     const epoch = weather.EpochTime;
     const date = new Date();
+    
+    const iconSrc = `Images/icons/${weather.WeatherIcon}.svg`;
 
     card.innerHTML = `
     <p class="time">${date.toLocaleString()}</p>
@@ -18,7 +21,7 @@ const updateUI = (data) => {
         <span>${weather.Temperature.Metric.Value} &deg;</span>
     </div>
     <div class="weather-info-icon">
-        <img src="" alt="">
+        <img src="${iconSrc}" alt="">
     </div>`;
 }
 
@@ -100,3 +103,4 @@ form.addEventListener('submit', event => {
         .catch(error => console.log(error))
     
 })
+

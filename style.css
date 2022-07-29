@@ -70,6 +70,10 @@ input::placeholder {color: #fffbeb;}
     font-size: 16px;
 }
 
+.weather-info-icon > img {
+    
+}
+
 .weather-details-container {
     color: white;
     min-width: 200px;
@@ -97,8 +101,9 @@ input::placeholder {color: #fffbeb;}
     width: 1.5em;
 }
 
+.heading {text-align: center;}
+
 .daily-forecast-container {
-    background-color: black;
     display: flex;
     justify-content: space-between;
     margin: 2em 5em;
