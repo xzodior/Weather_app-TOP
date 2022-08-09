@@ -21,7 +21,7 @@ const updateUI = (data) => {
         <span>${weather.Temperature.Metric.Value} &deg;</span>
     </div>
     <div class="weather-info-icon">
-        <img src="${iconSrc}" alt="">
+        <img class='image-icon' src="${iconSrc}" alt="Weather image">
     </div>`;
 }
 

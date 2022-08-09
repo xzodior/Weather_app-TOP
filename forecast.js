@@ -1,4 +1,4 @@
-const key = 'fnV2wsEztWouMTPlmKz8BRYELQh4bvGc';
+const key = 'BVOd74DWGXlX7m6t60D489OFZtxxBa8F';
 
 const getWeather = async(id) => {
 
@@ -40,6 +40,6 @@ const getDailyForecast = async(id) => {
 
     const response = await fetch(base + query);
     const data = await response.json();
-
+    
     return data;
 }
