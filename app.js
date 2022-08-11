@@ -8,13 +8,19 @@ const updateUI = (data) => {
 
     const cityDets = data.cityDetails;
     const weather = data.weather;
-    const epoch = weather.EpochTime;
-    const date = new Date();
+    console.log(cityDets)
+
+    function time(){
+        let date = new Date();
+        let utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+        let newDate = new Date(utc+(3600000*cityDets.TimeZone.GmtOffset))
+        return newDate.toLocaleString();
+    }
     
     const iconSrc = `Images/icons/${weather.WeatherIcon}.svg`;
 
     card.innerHTML = `
-    <p class="time">${date.toLocaleString()}</p>
+    <p class="time">${time()}</p>
     <h1>${cityDets.EnglishName}</h1>
     <p class="weather-conditions">${weather.WeatherText}</p>
     <div class="weather-info">
