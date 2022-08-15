@@ -12,6 +12,8 @@
     color: #fffbeb;
 }
 
+html, body{overflow-x: hidden;}         /*Removes white space when viewing on mobile devices*/
+
 html {
     background-image: url(./Images/Dune.jpg);
     background-repeat: no-repeat;
@@ -23,7 +25,10 @@ html {
 header {
     text-align: center;
     padding: 2em;
-    font-size: 2em;
+}
+
+header > h1 {
+    font-size: clamp(2rem, 4rem, 5vw);
 }
 
 form {
@@ -34,7 +39,7 @@ form {
 input {
     max-width: 400px;
     text-align: center;
-    font-size: 20px;
+    font-size: clamp(0.75rem, 1vw, 4rem);
     background-color: transparent;
     padding: 1em;
     border: none;
@@ -55,23 +60,29 @@ input::placeholder {color: #fffbeb;}
 }
 
 .card {
-    min-width: 500px;
-    min-height: 500px;
+    min-height: 400px;
     color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
-    font-size: 30px;
+    font-size: clamp(0.75rem, 1vw, 4rem);
 }
 
 .time {
     font-size: 16px;
 }
 
+.weather-info-icon {
+    width: 100px;
+}
+
 .image-icon {
     filter: invert(1);
+    width: 100%;
+    height: auto;
+    margin-left: -2.5em;
 }
 
 .weather-details-container {
@@ -80,8 +91,8 @@ input::placeholder {color: #fffbeb;}
     min-height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    font-size: 20px;
+    justify-content: space-between;
+    font-size: clamp(0.75rem, 1vw, 4rem);
 }
 
 .weather-details {
@@ -95,27 +106,63 @@ input::placeholder {color: #fffbeb;}
     gap: 12px;
 }
 
-.weather-details-data {font-size: 40px;}
-
 .fa-solid{
     width: 1.5em;
 }
 
-.heading {text-align: center;}
+.heading {text-align: center; font-size: clamp(1rem, 2vw, 4rem)}
+
+@media (max-width: 1200px) {
+
+
+    .card, .weather-details-container {
+        min-height: 300px;
+    }
+
+    .weather-info-icon {
+        width: 75px;
+        margin-left: -0.5em;
+    }
+}
 
 .daily-forecast-container {
     display: flex;
     justify-content: space-between;
-    margin: 2em 5em;
-    height: 10em;
+    margin: 1em 5em;
+    height: 15em;
+    font-size: clamp(0.75rem, 1vw, 4rem);
 }
 
 .daily-forecast {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px solid white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.daily-forecast-temperature-min{
+    font-size: 12px;
 }
 
 .daily-forecast-image {
+    width: 100px;
+}
+
+.daily-forecast-image > img {
     filter: invert(1);
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 867px) {
+    .daily-forecast-container{
+        
+    }
+
+    .daily-forecast-image {
+        width: 75px;
+    }
 }

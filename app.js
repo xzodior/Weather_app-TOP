@@ -8,7 +8,6 @@ const updateUI = (data) => {
 
     const cityDets = data.cityDetails;
     const weather = data.weather;
-    console.log(cityDets)
 
     function time(){
         let date = new Date();
@@ -34,7 +33,7 @@ const updateUI = (data) => {
 const updateForecastUI = (data) => {
     
     const forecastDetails = data.forecastDetails;
-    
+
     weatherDetails.innerHTML = `
     <div class="weather-details">
         <i class="fa-solid fa-wind fa-2x"></i>
@@ -70,8 +69,6 @@ const updateCity = async(city) => {
 
     const cityDetails = await getCity(city);
     const weather = await getWeather(cityDetails.Key);
-    // console.log(cityDetails)
-    // console.log(weather)
 
     return {
         cityDetails, 
@@ -83,7 +80,6 @@ const updateForecast = async(city) => {
 
     const cityDetails = await getCity(city);
     const forecastDetails = await getForecast(cityDetails.Key)
-    // console.log(forecastDetails)
 
     return {
         forecastDetails
