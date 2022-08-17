@@ -19,9 +19,9 @@ const updateUI = (data) => {
     const iconSrc = `Images/icons/${weather.WeatherIcon}.svg`;
 
     card.innerHTML = `
-    <p class="time">${time()}</p>
-    <h1>${cityDets.EnglishName}</h1>
     <p class="weather-conditions">${weather.WeatherText}</p>
+    <h1>${cityDets.EnglishName}</h1>
+    <p class="time">${time()}</p>
     <div class="weather-info">
         <span>${weather.Temperature.Metric.Value} &deg;</span>
     </div>
