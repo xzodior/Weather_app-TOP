@@ -73,7 +73,6 @@ input::placeholder {color: #fffbeb;}
     .weather-container {
         margin: 2em 0;
         padding: 0 2em;
-        justify-content: space-between;
     }
 }
 
@@ -93,7 +92,7 @@ input::placeholder {color: #fffbeb;}
 }
 
 .weather-conditions {font-size: clamp(0.75rem, 2vw, 4rem)}
-.weather-info > span {font-size: clamp(0.75rem, 3vw, 4rem)}
+.weather-info > span {font-size: clamp(1rem, 3vw, 4rem)}
 
 .weather-info-icon {
     width: 100px;
@@ -138,6 +137,10 @@ input::placeholder {color: #fffbeb;}
         min-height: 300px;
     }
 
+    .weather-details-container {
+        min-width: 100px;
+    }
+
     .weather-info-icon {
         width: 75px;
         margin-left: -0.5em;
@@ -149,8 +152,8 @@ input::placeholder {color: #fffbeb;}
         justify-content: space-evenly;
     }
 
-    .weather-details {
-        justify-content: flex-end;
+    .weather-details-container {
+        min-width: 100px;
     }
 
     .weather-info-icon {
@@ -231,5 +234,9 @@ input::placeholder {color: #fffbeb;}
     .daily-forecast-template {
         display: flex;
         flex-direction: row;
+    }
+
+    .daily-forecast-image {
+        width: 50px;
     }
 }
