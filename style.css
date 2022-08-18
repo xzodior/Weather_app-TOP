@@ -156,6 +156,10 @@ input::placeholder {color: #fffbeb;}
         min-width: 100px;
     }
 
+    .weather-container {
+        margin: 1em 0;
+    }
+
     .weather-info-icon {
         width: 50px;
     }
@@ -224,7 +228,6 @@ input::placeholder {color: #fffbeb;}
         border: none;
         justify-content: space-between;
         width: 300px;
-        padding: 0;
     }
 
     .daily-forecast-temperature-min {

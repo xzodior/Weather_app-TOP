@@ -103,6 +103,20 @@ form.addEventListener('submit', event => {
     updateDailyForecast(input)
         .then(data => updateDailyForecastUI(data))
         .catch(error => console.log(error))
-    
+
+    localStorage.setItem('city', input)
 })
 
+if (localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(error => console.log(error))
+
+    updateForecast(localStorage.getItem('city'))
+        .then(data => updateForecastUI(data))
+        .catch(error => console.log(error))
+
+    updateDailyForecast(localStorage.getItem('city'))
+        .then(data => updateDailyForecastUI(data))
+        .catch(error => console.log(error))
+}
