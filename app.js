@@ -86,6 +86,8 @@ const updateForecast = async(city) => {
     }
 }
 
+const errorInfo = document.querySelector('.error-info')
+
 form.addEventListener('submit', event => {
     event.preventDefault();
 
@@ -93,8 +95,14 @@ form.addEventListener('submit', event => {
     form.reset();
 
     updateCity(input)
-        .then(data => updateUI(data))
-        .catch(error => console.log(error))
+        .then(data => {
+            updateUI(data);
+            errorInfo.classList.remove('error')
+        })
+        .catch(error => {
+            errorInfo.textContent = 'Please enter a valid city name';
+            errorInfo.classList.toggle('error')
+        })
 
     updateForecast(input)
         .then(data => updateForecastUI(data))

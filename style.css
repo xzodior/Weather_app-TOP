@@ -50,6 +50,15 @@ input:focus {
     outline: none;
 }
 
+.error-info {
+    font-size: 12px;
+    margin: 1em 0;
+    color: crimson;
+    display: none;
+}
+
+.error {display: block;}
+
 input::placeholder {color: #fffbeb;}
 
 @media (max-width: 623px) {
