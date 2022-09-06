@@ -16,7 +16,15 @@ const updateUI = (data) => {
         return newDate.toLocaleString();
     }
     
+    const body = document.querySelector('body')
     const iconSrc = `Images/icons/${weather.WeatherIcon}.svg`;
+    let viewport = window.matchMedia("(max-width: 1000px)")
+
+    if (weather.IsDayTime){
+        document.body.style.backgroundImage = "url('./Images/day.jpg')"
+    } else {
+        document.body.style.backgroundImage = "url('./Images/night.jpg')"
+    }
 
     card.innerHTML = `
     <p class="weather-conditions">${weather.WeatherText}</p>
