@@ -28,7 +28,7 @@ header {
 }
 
 header > h1 {
-    font-size: clamp(1rem, 4rem, 5vw);
+    font-size: clamp(1rem, 2vw, 3em);
 }
 
 form {
@@ -43,7 +43,8 @@ input {
     background-color: transparent;
     padding: 1em;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
+    color: white;
 }
 
 input:focus {
@@ -86,13 +87,20 @@ input::placeholder {color: #fffbeb;}
 }
 
 .card {
-    min-height: 400px;
+    min-height: 300px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    font-size: clamp(0.25rem, 0.75vw, 3rem);
+    font-size: clamp(0.5rem, 0.75vw, 3rem);
+}
+
+.date-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
 }
 
 .time {
@@ -115,7 +123,7 @@ input::placeholder {color: #fffbeb;}
 
 .weather-details-container {
     min-width: 200px;
-    min-height: 400px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -211,6 +219,36 @@ input::placeholder {color: #fffbeb;}
     filter: invert(1);
     width: 100%;
     height: auto;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: rgba(220, 20, 60, 0.486);
+    transition: 0.3s;
+}
+
+a:hover {color: crimson;}
+
+@media (max-width: 1200px) {
+    .daily-forecast{
+        height: 15em;
+        justify-content: space-evenly;
+    }
 }
 
 @media (max-width: 867px) {

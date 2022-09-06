@@ -28,8 +28,10 @@ const updateUI = (data) => {
 
     card.innerHTML = `
     <p class="weather-conditions">${weather.WeatherText}</p>
-    <h1>${cityDets.EnglishName}</h1>
-    <p class="time">${time()}</p>
+    <div class="date-time">
+        <h1>${cityDets.EnglishName}</h1>
+        <p class="time">${time()}</p>
+    </div>
     <div class="weather-info">
         <span>${weather.Temperature.Metric.Value} &deg;</span>
     </div>
