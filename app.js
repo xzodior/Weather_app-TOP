@@ -3,6 +3,8 @@ const container = document.querySelector('.weather-container');
 const card = document.querySelector('.card');
 const weatherDetails = document.querySelector('.weather-details-container');
 const icon = document.querySelector('.weather-info-icon img');
+const forecast = new Forecast();
+console.log(forecast)
 
 const updateUI = (data) => {
 
@@ -75,27 +77,6 @@ const updateForecastUI = (data) => {
     </div>`
 }
 
-const updateCity = async(city) => {
-
-    const cityDetails = await getCity(city);
-    const weather = await getWeather(cityDetails.Key);
-
-    return {
-        cityDetails, 
-        weather
-    }
-}
-
-const updateForecast = async(city) => {
-
-    const cityDetails = await getCity(city);
-    const forecastDetails = await getForecast(cityDetails.Key)
-
-    return {
-        forecastDetails
-    }
-}
-
 const errorInfo = document.querySelector('.error-info')
 
 form.addEventListener('submit', event => {
@@ -104,7 +85,7 @@ form.addEventListener('submit', event => {
     const input = form.search.value.trim();
     form.reset();
 
-    updateCity(input)
+    forecast.updateCity(input)
         .then(data => {
             updateUI(data);
             errorInfo.classList.remove('error')
@@ -114,11 +95,11 @@ form.addEventListener('submit', event => {
             errorInfo.classList.toggle('error')
         })
 
-    updateForecast(input)
+    forecast.updateForecast(input)
         .then(data => updateForecastUI(data))
         .catch(error => console.log(error))
 
-    updateDailyForecast(input)
+    forecast.updateDailyForecast(input)
         .then(data => updateDailyForecastUI(data))
         .catch(error => console.log(error))
 
@@ -126,15 +107,15 @@ form.addEventListener('submit', event => {
 })
 
 if (localStorage.getItem('city')){
-    updateCity(localStorage.getItem('city'))
+    forecast.updateCity(localStorage.getItem('city'))
         .then(data => updateUI(data))
         .catch(error => console.log(error))
 
-    updateForecast(localStorage.getItem('city'))
+    forecast.updateForecast(localStorage.getItem('city'))
         .then(data => updateForecastUI(data))
         .catch(error => console.log(error))
 
-    updateDailyForecast(localStorage.getItem('city'))
+    forecast.updateDailyForecast(localStorage.getItem('city'))
         .then(data => updateDailyForecastUI(data))
         .catch(error => console.log(error))
 }

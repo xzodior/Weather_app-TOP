@@ -93,6 +93,7 @@ input::placeholder {color: #fffbeb;}
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 50px;
     font-size: clamp(0.5rem, 0.75vw, 3rem);
 }
 
@@ -107,8 +108,8 @@ input::placeholder {color: #fffbeb;}
     font-size: clamp(0.5rem, 1vw, 3rem);
 }
 
-.weather-conditions {font-size: clamp(0.75rem, 2vw, 4rem)}
-.weather-info > span {font-size: clamp(1rem, 3vw, 4rem)}
+.weather-conditions {font-size: clamp(0.75rem, 2vw, 2rem)}
+.weather-info > span {font-size: clamp(1rem, 3vw, 2rem)}
 
 .weather-info-icon {
     width: 100px;
@@ -153,6 +154,7 @@ input::placeholder {color: #fffbeb;}
 @media (max-width: 1200px) {
     .card, .weather-details-container {
         min-height: 300px;
+        gap: 0px;
     }
 
     .weather-details-container {
@@ -225,6 +227,7 @@ footer {
     position: fixed;
     left: 0;
     bottom: 0;
+    right: 0;
     width: 100%;
     background-color: white;
     color: black;
@@ -233,6 +236,7 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 1em;
+    font-size: clamp(0.5em, 2vw, 1em);
 }
 
 a {
